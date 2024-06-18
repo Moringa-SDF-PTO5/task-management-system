@@ -1,7 +1,17 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from './pages/homepage/Home'
+
 function App() {
     return (
         <>
-            <h1>Task Management System Homepage.</h1>
+            <Router>
+                <Routes>
+                    <Route
+                        path='/'
+                        element={<Home />}
+                    />
+                </Routes>
+            </Router>
         </>
     )
 }
