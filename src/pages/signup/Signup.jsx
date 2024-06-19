@@ -28,6 +28,7 @@ function Signup() {
         onSubmit: async (values) => {
             const response = await fetch('http://localhost:5555/user', {
                 method: 'POST',
+                mode: "cors",
                 headers: {
                     'Content-Type': 'application/json',
                 },
