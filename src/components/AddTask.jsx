@@ -39,9 +39,9 @@ const AddTask = () => {
                     const data = await response.json();
                     alert('Task added successfully!');
                     console.log('New task:', data);
-                    navigate('/dashboard'); // Navigate to dashboard after successful submission
+                    navigate('/dashboard'); 
                 } else {
-                    const data = await response.json(); // Attempt to read error message from backend
+                    const data = await response.json(); 
                     console.error('Backend error:', data);
                     throw new Error(data.error || 'Failed to add task');
                 }
