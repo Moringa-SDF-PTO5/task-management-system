@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
+import Header from './components/header/Header'
 import Home from './pages/homepage/Home'
 import Signup from './pages/signup/Signup'
 import Login from './pages/login/Login'
@@ -8,11 +9,17 @@ import UserDetails from './components/UserDetails'
 import AddTask from './components/AddTask'
 
 function App() {
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState(null)
+
+    // console.log(user)
 
     return (
         <>
             <Router>
+                <Header
+                    user={user}
+                    setUser={setUser}
+                />
                 <Routes>
                     <Route
                         path='/'

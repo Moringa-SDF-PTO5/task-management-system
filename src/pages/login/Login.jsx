@@ -43,7 +43,7 @@ function Login({ setUser }) {
                 const data = await response.json()
 
                 if (response.status === 200) {
-                    // console.log(data)
+                    console.log(response)
                     setUser(data)
                     navigate('/dashboard')
                 } else {
