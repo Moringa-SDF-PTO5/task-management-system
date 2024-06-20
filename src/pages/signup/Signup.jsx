@@ -1,8 +1,11 @@
+import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import './Signup.css'
 
 function Signup() {
+    const navigate = useNavigate()
+
     const formSchema = Yup.object().shape({
         firstName: Yup.string().required('Required'),
         lastName: Yup.string().required('Required'),
@@ -36,7 +39,7 @@ function Signup() {
 
             // const data = await response.json()
             if (response.status === 201) {
-                alert(response)
+                navigate('/login')
             }
         },
     })
@@ -118,7 +121,7 @@ function Signup() {
                 <div className='form-data'>
                     <label htmlFor='password'>Password</label>
                     <input
-                        type='text'
+                        type='password'
                         placeholder='Password'
                         id='password'
                         name='password'
