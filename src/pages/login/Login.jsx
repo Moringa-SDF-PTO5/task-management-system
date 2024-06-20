@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import Cookies from 'js-cookie'
 import './Login.css'
 
 const BASE_URL = import.meta.env.VITE_SERVER_BASE_URL
@@ -31,23 +32,30 @@ function Login({ setUser }) {
         },
         validationSchema: formSchema,
         onSubmit: async (values) => {
-            const response = await fetch(`${BASE_URL}/login`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(values, null, 2),
-            })
+            try {
+                const response = await fetch(`${BASE_URL}/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(values, null, 2),
+                })
 
-            const data = await response.json()
+                const data = await response.json()
 
-            if (response.status === 200) {
-                // console.log(data)
-                setUser(data)
-                navigate('/dashboard')
-            } else {
-                // alert(data.message)
-                setIsError((isError) => !isError)
+                if (response.status === 200) {
+                    // console.log(response)
+                    setUser(data)
+                    Cookies.set('userId', data.id, {
+                        path: '/',
+                    })
+                    navigate('/dashboard')
+                } else {
+                    // alert(data.message)
+                    setIsError((isError) => !isError)
+                }
+            } catch (error) {
+                console.log(error)
             }
         },
     })

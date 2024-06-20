@@ -1,5 +1,3 @@
-
-import React from 'react';
 import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
@@ -20,7 +18,7 @@ function Signup() {
             .min(4, 'Password length should be more than 4')
             .max(8, 'Password length should be less than 8')
             .required('Required'),
-    });
+    })
 
     const formik = useFormik({
         initialValues: {
@@ -33,21 +31,25 @@ function Signup() {
         },
         validationSchema: formSchema,
         onSubmit: async (values) => {
-            const response = await fetch(`${BASE_URL}/user`, {
-                method: 'POST',
-                mode: "cors",
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(values, null, 2),
-            })
+            try {
+                const response = await fetch(`${BASE_URL}/user`, {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(values, null, 2),
+                })
 
-            // const data = await response.json()
-            if (response.status === 201) {
-                navigate('/login')
+                // const data = await response.json()
+                if (response.status === 201) {
+                    navigate('/login')
+                }
+            } catch (error) {
+                console.log(error)
             }
         },
-    });
+    })
 
     return (
         <section className='signup-container'>
@@ -137,7 +139,7 @@ function Signup() {
                 </div>
             </form>
         </section>
-    );
+    )
 }
 
-export default Signup;
+export default Signup
