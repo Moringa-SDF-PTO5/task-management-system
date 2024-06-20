@@ -1,3 +1,5 @@
+
+import React from 'react';
 import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
@@ -11,12 +13,12 @@ function Signup() {
         lastName: Yup.string().required('Required'),
         userName: Yup.string().required('Required'),
         email: Yup.string().email('Invalid Email').required('Required'),
-        phone: Yup.number().positive().integer().required('Required'),
+        phone: Yup.string().required('Required'),
         password: Yup.string()
             .min(4, 'Password length should be more than 4')
             .max(8, 'Password length should be less than 8')
             .required('Required'),
-    })
+    });
 
     const formik = useFormik({
         initialValues: {
@@ -43,7 +45,7 @@ function Signup() {
                 navigate('/login')
             }
         },
-    })
+    });
 
     return (
         <section className='signup-container'>
@@ -53,7 +55,6 @@ function Signup() {
                     <label htmlFor='firstName'>First Name</label>
                     <input
                         type='text'
-                        placeholder='First Name'
                         id='firstName'
                         name='firstName'
                         onChange={formik.handleChange}
@@ -67,7 +68,6 @@ function Signup() {
                     <label htmlFor='lastName'>Last Name</label>
                     <input
                         type='text'
-                        placeholder='Last Name'
                         id='lastName'
                         name='lastName'
                         onChange={formik.handleChange}
@@ -81,7 +81,6 @@ function Signup() {
                     <label htmlFor='userName'>Username</label>
                     <input
                         type='text'
-                        placeholder='Username'
                         id='userName'
                         name='userName'
                         onChange={formik.handleChange}
@@ -95,7 +94,6 @@ function Signup() {
                     <label htmlFor='email'>Email</label>
                     <input
                         type='text'
-                        placeholder='Email'
                         id='email'
                         name='email'
                         onChange={formik.handleChange}
@@ -108,8 +106,7 @@ function Signup() {
                 <div className='form-data'>
                     <label htmlFor='phone'>Phone Number</label>
                     <input
-                        type='number'
-                        placeholder='Phone Number'
+                        type='text'
                         id='phone'
                         name='phone'
                         onChange={formik.handleChange}
@@ -138,7 +135,7 @@ function Signup() {
                 </div>
             </form>
         </section>
-    )
+    );
 }
 
-export default Signup
+export default Signup;
