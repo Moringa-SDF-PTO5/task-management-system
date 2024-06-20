@@ -55,18 +55,19 @@ const AddTask = () => {
     })
 
     return (
-        <form onSubmit={formik.handleSubmit}>
-            <div>
+        <section className='signup-container'>
+          <form onSubmit={formik.handleSubmit}>
+            <div className='form-data'>
                 <label>Title</label>
                 <input
-                    type='text'
-                    name='title'
+                    type="hidden"
+                    name="title"
                     onChange={formik.handleChange}
                     value={formik.values.title}
                 />
                 {formik.errors.title && <div>{formik.errors.title}</div>}
             </div>
-            <div>
+            <div className='form-data'>
                 <label>Description</label>
                 <textarea
                     name='description'
@@ -77,7 +78,7 @@ const AddTask = () => {
                     <div>{formik.errors.description}</div>
                 )}
             </div>
-            <div>
+            <div className='form-data'>
                 <label>Start Date</label>
                 <input
                     type='date'
@@ -89,7 +90,7 @@ const AddTask = () => {
                     <div>{formik.errors.start_date}</div>
                 )}
             </div>
-            <div>
+            <div className='form-data'>
                 <label>End Date</label>
                 <input
                     type='date'
@@ -99,7 +100,7 @@ const AddTask = () => {
                 />
                 {formik.errors.end_date && <div>{formik.errors.end_date}</div>}
             </div>
-            <div>
+            <div className='form-data'>
                 <label>Status</label>
                 <input
                     type='text'
@@ -109,7 +110,7 @@ const AddTask = () => {
                 />
                 {formik.errors.status && <div>{formik.errors.status}</div>}
             </div>
-            <div>
+            <div className='form-data'>
                 <label>User ID</label>
                 <input
                     type='number'
@@ -119,9 +120,12 @@ const AddTask = () => {
                 />
                 {formik.errors.user_id && <div>{formik.errors.user_id}</div>}
             </div>
-            <button type='submit'>Add Task</button>
+            <button type="submit">Add Task</button>
+            <button onClick={() => navigate('/dashboard')}className='bckdashboard'>Back to Dashboard</button>
         </form>
-    )
-}
+        </section>
+        
+    );
+};
 
 export default AddTask
