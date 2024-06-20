@@ -31,23 +31,27 @@ function Login({ setUser }) {
         },
         validationSchema: formSchema,
         onSubmit: async (values) => {
-            const response = await fetch(`${BASE_URL}/login`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(values, null, 2),
-            })
+            try {
+                const response = await fetch(`${BASE_URL}/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(values, null, 2),
+                })
 
-            const data = await response.json()
+                const data = await response.json()
 
-            if (response.status === 200) {
-                // console.log(data)
-                setUser(data)
-                navigate('/dashboard')
-            } else {
-                // alert(data.message)
-                setIsError((isError) => !isError)
+                if (response.status === 200) {
+                    // console.log(data)
+                    setUser(data)
+                    navigate('/dashboard')
+                } else {
+                    // alert(data.message)
+                    setIsError((isError) => !isError)
+                }
+            } catch (error) {
+                console.log(error)
             }
         },
     })
