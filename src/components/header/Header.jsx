@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import Cookies from 'js-cookie'
 import './Header.css'
 
 function Header({ user, setUser }) {
@@ -6,13 +7,14 @@ function Header({ user, setUser }) {
 
     function handleLogout() {
         setUser(null)
+        Cookies.remove('userId', { path: '/' })
         navigate('/')
     }
     return (
         <header className='header-container'>
             <h3>group-task-manager</h3>
             <div className='header-buttons'>
-                {user ? (
+                {Cookies.get('userId') || user ? (
                     <button
                         type='button'
                         onClick={handleLogout}

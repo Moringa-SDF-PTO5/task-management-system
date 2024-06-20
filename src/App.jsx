@@ -11,7 +11,11 @@ import AddTask from './components/AddTask'
 function App() {
     const [user, setUser] = useState(null)
 
+    // console.log(cookies)
+
     // console.log(user)
+
+    // removeCookie('user', { path: '/' })
 
     return (
         <>

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import Cookies from 'js-cookie'
 import './Login.css'
 
 const BASE_URL = import.meta.env.VITE_SERVER_BASE_URL
@@ -43,8 +44,11 @@ function Login({ setUser }) {
                 const data = await response.json()
 
                 if (response.status === 200) {
-                    console.log(response)
+                    // console.log(response)
                     setUser(data)
+                    Cookies.set('userId', data.id, {
+                        path: '/',
+                    })
                     navigate('/dashboard')
                 } else {
                     // alert(data.message)
