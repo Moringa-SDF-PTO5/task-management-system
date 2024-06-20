@@ -3,6 +3,8 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import './Signup.css'
 
+const BASE_URL = import.meta.env.VITE_SERVER_BASE_URL
+
 function Signup() {
     const navigate = useNavigate()
 
@@ -29,7 +31,7 @@ function Signup() {
         },
         validationSchema: formSchema,
         onSubmit: async (values) => {
-            const response = await fetch('http://localhost:5555/user', {
+            const response = await fetch(`${BASE_URL}/user`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

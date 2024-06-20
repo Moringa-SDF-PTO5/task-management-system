@@ -4,6 +4,8 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import './Login.css'
 
+const BASE_URL = import.meta.env.VITE_SERVER_BASE_URL
+
 function Login({ setUser }) {
     const [isError, setIsError] = useState(false)
 
@@ -29,7 +31,7 @@ function Login({ setUser }) {
         },
         validationSchema: formSchema,
         onSubmit: async (values) => {
-            const response = await fetch('http://localhost:5555/login', {
+            const response = await fetch(`${BASE_URL}/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
