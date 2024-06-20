@@ -1,9 +1,13 @@
+
 import React from 'react';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import './Signup.css';
+import { useNavigate } from 'react-router-dom'
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
+import './Signup.css'
 
 function Signup() {
+    const navigate = useNavigate()
+
     const formSchema = Yup.object().shape({
         firstName: Yup.string().required('Required'),
         lastName: Yup.string().required('Required'),
@@ -27,20 +31,18 @@ function Signup() {
         },
         validationSchema: formSchema,
         onSubmit: async (values) => {
-            try {
-                const response = await fetch('http://localhost:5555/users', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(values),
-                });
-                if (!response.ok) {
-                    throw new Error('Failed to add user');
-                }
-                alert('User added successfully!');
-            } catch (error) {
-                console.error('Error adding user:', error);
+            const response = await fetch('http://localhost:5555/user', {
+                method: 'POST',
+                mode: "cors",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(values, null, 2),
+            })
+
+            // const data = await response.json()
+            if (response.status === 201) {
+                navigate('/login')
             }
         },
     });
@@ -118,6 +120,7 @@ function Signup() {
                     <label htmlFor='password'>Password</label>
                     <input
                         type='password'
+                        placeholder='Password'
                         id='password'
                         name='password'
                         onChange={formik.handleChange}
