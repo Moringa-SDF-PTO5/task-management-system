@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import './Dashboard.css';
 
 const Dashboard = () => {
     const [users, setUsers] = useState([]);
@@ -18,7 +19,7 @@ const Dashboard = () => {
     }, []);
 
     return (
-        <div>
+        <div className='dashboard-container'>
             <h1>Dashboard</h1>
             <h2>Users</h2>
             <ul>
