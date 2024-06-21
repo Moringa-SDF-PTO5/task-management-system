@@ -14,7 +14,7 @@ The front-end of the we application has been developed by React JS and the Back-
 
 The app has been developed using the following tools:
 
-* React JS
+* Node.JS
   
 * HTML 5
 
@@ -39,72 +39,17 @@ For the project to run the following should be fullfilled:
   
 ### Steps
 
-1. Clone the repo in your machine using the ssh ```g```
+1. Clone the repo in your machine using the ssh ```git@github.com:Moringa-SDF-PTO5/task-management-system.git```
 
-2. Use ```cd superheroes-jackson-njihia``` to navigate to the directory where it has been cloned.
+2. Use ```task-management-system.git``` to navigate to the directory where it has been cloned.
 
 3. Run ```code . ``` to open the repository in VSCode.
   
-4. To create a virtual environmentopen the terminal and run ``` python -m venv env```  and activate it using  ``` source env/bin/activate``` 
+4. Run  ``` npm install```  to install the requirements.
 
-5. To install the required resources run ``` pip install -r requirements.txt``` 
-
-6.  To run the app in the terminal use ``` python main.py```  or ``` python3 main.py```
-
-7.  **Optional** (the repo already contains the db; however if it is not present you can create it using
-
-                flask db init
-    
-                flask db migrate -m "initial migration" (this will lead to a creation of a new file in versions)
-    
-                flask db upgrade (this will commit the creation of the database)
-
-   
-8. Seed the database using ``` python seed.py``` and use the [``` curl commands ```](https://sqlite.org/cli.html) or installed db viewer or external database tool to confirm it is populated.
-
-**NB**
-You can also use sudo to manualy install the necessary dependences such as 
-
-```sudo snap install postman```
-
-9. To run Postman (open a different terminal from the one running the app, if you want to view simulteneously on browser or perform other ```curl``` methods) run ```postman```
+5. Run ```npm start``` and ```npm run build``` to start the app.  
 
 ## Demo
-
-(*The demo uses a different port from that specified in the app*)
-
-**GET /heroes** 
-
-![Browser showing get/heroes](https://github.com/Moringa-SDF-PTO5/superheroes-jackson-njihia/assets/152980044/a25ad2f3-aa80-486e-bfdd-ce2196f4f8bb
-
-
- ![Postman showing get/heroes](https://github.com/Moringa-SDF-PTO5/superheroes-jackson-njihia/assets/152980044/d25ef07b-0623-4f07-857b-19a593ac68ed)
-
-
-**GET /powers** 
-
-
-![Postman showing get/powers](https://github.com/Moringa-SDF-PTO5/superheroes-jackson-njihia/assets/152980044/c0e5a93f-d512-4b3d-952c-334eddfc0fb1)
-
-
-**GET /heroes/:id**
-
-
-![Showing hero by id=3](https://github.com/Moringa-SDF-PTO5/superheroes-jackson-njihia/assets/152980044/ae9f8c20-ae51-4e2d-83f8-954e28ef314a)
-
-
-
- **GET /powers/:id**
- 
-
-![Postman showing invalid power id](https://github.com/Moringa-SDF-PTO5/superheroes-jackson-njihia/assets/152980044/095a0249-e780-475e-9136-20cc1dd92f28)
-
-
-**PATCH /powers/:id**
-
-
-![Showing patch involving a change in the description of a power](https://github.com/Moringa-SDF-PTO5/superheroes-jackson-njihia/assets/152980044/e29e6383-b9ef-4314-84f9-36f7db75609d)
-
 
 
 ## Author
@@ -112,7 +57,10 @@ The repo has been created and is currently being maintained by:
 
 - Andrew Langat
 
-- Brian 
+- Sylivia Chelimo
+
+- Brian Tswal
+- 
 - Barbra Tess
 
 - Jackson Njihia
