@@ -5,11 +5,11 @@
 ## Overview
 
 
-The front-end of the we application has been developed by React JS and the Back-end by Flask. The back-end has been deployed on render at (https://task-management-system-backend-39v0.onrender.com/user).
+The front-end of the we application has been developed by React JS and the Back-end by Flask. The back-end has been deployed on render at (https://task-management-system-backend-39v0.onrender.com/user). The app allows users to sign-up, sign-in and get, delete, and post new tasks. The tasks can be performed by one person or multiple people. Moreover, users can through the review provide insight regarding the status of a task such as whether it is complete or incomplete and provide feedback on a given task. 
 
-The specific end-points for the API (routes) and their methods include (examples and responses are shown in the demo):
+The specific end-points for the API (routes) and their methods include:
 
-* **GET /heroes** (displays json details of all heroes) 
+* **GET /user** (displays json details of all heroes) 
   
 * **GET /heroes/:id** (displays the hero by an integer id)
   
