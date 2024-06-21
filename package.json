@@ -1,6 +1,7 @@
 {
     "name": "task-management-system",
     "private": true,
+    "proxy": "https://task-management-system-backend-39v0.onrender.com",
     "version": "0.0.0",
     "type": "module",
     "scripts": {
