@@ -1,12 +1,11 @@
 # Task Management System
-# superheroes-jackson-njihia
 
 
 
 ## Overview
 
 
-The Flask API allows users to perform various methods such as get, post, and patch. It has two main objects, heroes and powers, that are related through heropower. A hero can possess many power, a power can be possessed by many heroes, and a heropower can only belong to one hero and one power. 
+The front-end of the we application has been developed by React JS and the Back-end by Flask. The back-end has been deployed on render at (https://task-management-system-backend-39v0.onrender.com/user).
 
 The specific end-points for the API (routes) and their methods include (examples and responses are shown in the demo):
 
