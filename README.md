@@ -7,20 +7,6 @@
 
 The front-end of the we application has been developed by React JS and the Back-end by Flask. The back-end has been deployed on render at (https://task-management-system-backend-39v0.onrender.com/user). The app allows users to sign-up, sign-in and get, delete, and post new tasks. The tasks can be performed by one person or multiple people. Moreover, users can through the review provide insight regarding the status of a task such as whether it is complete or incomplete and provide feedback on a given task. 
 
-The specific end-points for the API (routes) and their methods include:
-
-* **GET /user** (displays json details of all heroes) 
-  
-* **GET /heroes/:id** (displays the hero by an integer id)
-  
-* **GET /powers** (displays all powers)
-  
-* **GET /powers/:id** (displays power whose id is specified)
-  
-* **PATCH /powers/:id** (updates the description of the power whose id is specified)
-  
-* **POST /hero_powers** (creates a new `HeroPower` that is associated with an existing `Power` and `Hero`)
-
 
 
 ## Tools
@@ -28,13 +14,14 @@ The specific end-points for the API (routes) and their methods include:
 
 The app has been developed using the following tools:
 
-* Python3.10.12
+* React JS
   
-* sqlite3.
+* HTML 5
+
+* CSS 3
   
-* [Postman](https://www.postman.com/) (used to perform methods such as patch and post)]
     
-To view or manipulate the code you need to use one of the following code editors [VSCode](https://www.hostinger.com/tutorials/best-code-editors#1_Visual_Studio_Code), or any other online python compiler.
+To view or manipulate the code you need to use one of the following code editors [VSCode](https://www.hostinger.com/tutorials/best-code-editors#1_Visual_Studio_Code), or any other online Javascript, CSS and HTML compiler or browser.
 
 
 ## Set-up
@@ -52,7 +39,7 @@ For the project to run the following should be fullfilled:
   
 ### Steps
 
-1. Clone the repo in your machine using the ssh ```git@github.com:Moringa-SDF-PTO5/superheroes-jackson-njihia.git```
+1. Clone the repo in your machine using the ssh ```g```
 
 2. Use ```cd superheroes-jackson-njihia``` to navigate to the directory where it has been cloned.
 
