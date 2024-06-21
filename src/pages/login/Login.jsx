@@ -5,8 +5,6 @@ import * as Yup from 'yup'
 import Cookies from 'js-cookie'
 import './Login.css'
 
-const BASE_URL = import.meta.env.VITE_SERVER_BASE_URL
-
 function Login({ setUser }) {
     const [isError, setIsError] = useState(false)
 
@@ -33,7 +31,7 @@ function Login({ setUser }) {
         validationSchema: formSchema,
         onSubmit: async (values) => {
             try {
-                const response = await fetch(`${BASE_URL}/login`, {
+                const response = await fetch(`/api/login`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
