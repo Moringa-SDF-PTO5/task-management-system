@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import './Dashboard.css';
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import './Dashboard.css'
 
 const Dashboard = () => {
     const [users, setUsers] = useState([])
     const [tasks, setTasks] = useState([])
     
     useEffect(() => {
-        fetch(`${BASE_URL}/users`)
+        fetch(`/api/users`)
             .then((response) => response.json())
-            .then((data) => setUsers(data))
+            .then((data) => setUsers(data.data))
             .catch((error) => console.error('Error fetching users:', error))
 
-        fetch(`${BASE_URL}/tasks`)
-            .then((response) => response.json())
-            .then((data) => setTasks(data))
-            .catch((error) => console.error('Error fetching tasks:', error))
+        // fetch(`/tasks`)
+        //     .then((response) => response.json())
+        //     .then((data) => setTasks(data))
+        //     .catch((error) => console.error('Error fetching tasks:', error))
     }, [])
 
     return (
@@ -25,7 +25,7 @@ const Dashboard = () => {
             <ul>
                 {users.map((user) => (
                     <li key={user.id}>
-                        <Link to={`/user/${user.id}`}>{user.userName}</Link>
+                        <Link to={`/user/${user.id}`}>{user.firstName}</Link>
                     </li>
                 ))}
             </ul>
