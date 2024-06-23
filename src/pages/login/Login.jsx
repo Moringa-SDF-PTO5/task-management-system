@@ -33,6 +33,7 @@ function Login({ setUser }) {
             try {
                 const response = await fetch(`https://task-management-system-backend-39v0.onrender.com/api/login`, {
                     method: 'POST',
+                    mode: 'cors',
                     headers: {
                         'Content-Type': 'application/json',
                     },
