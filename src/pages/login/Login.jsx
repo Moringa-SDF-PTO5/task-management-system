@@ -39,6 +39,8 @@ function Login({ setUser }) {
                     body: JSON.stringify(values, null, 2),
                 })
 
+                console.log('response is: ', response)
+
                 const data = await response.json()
 
                 if (response.status === 200) {
