@@ -59,45 +59,56 @@ function Login({ setUser }) {
     })
 
     return (
-        <section className='login-container'>
+        <>
+        <section className='login-container  p-3 m-3'>
             <h2>Log In</h2>
-            <form onSubmit={formik.handleSubmit}>
-                <div className='form-data'>
-                    <label htmlFor='userName'>Username</label>
-                    <input
-                        type='text'
-                        id='userName'
-                        name='userName'
-                        placeholder='Username'
-                        onChange={formik.handleChange}
-                        value={formik.values.userName}
-                    />
-                    {formik.errors.userName && formik.touched.userName ? (
-                        <p>{formik.errors.userName}</p>
-                    ) : null}
-                </div>
-                <div className='form-data'>
-                    <label htmlFor='password'>Password</label>
-                    <input
-                        type='password'
-                        id='password'
-                        name='password'
-                        placeholder='Password'
-                        onChange={formik.handleChange}
-                        value={formik.values.password}
-                    />
-                    {formik.errors.password && formik.touched.password ? (
-                        <p>{formik.errors.password}</p>
-                    ) : null}
-                </div>
-                <div className='form-data'>
-                    <button type='submit'>Submit</button>
+            <form onSubmit={formik.handleSubmit} className='m-3 p-3'>
+                <div className="row">
+                    <div className="row mb-3">
+                            <label htmlFor='userName' className="col-sm-2 col-form-label">Username</label>
+                            <div className="col-sm-10">
+                                <input
+                                    type='text'
+                                    id='userName'
+                                    className="form-control"
+                                    name='userName'
+                                    placeholder='Username'
+                                    onChange={formik.handleChange}
+                                    value={formik.values.userName}
+                                />
+                                {formik.errors.userName && formik.touched.userName ? (
+                                <p>{formik.errors.userName}</p>
+                                    ) : null}
+                            </div>
+                    </div>
+                    <div className="row mb-3">
+                        <label htmlFor='password' className="col-sm-2 col-form-label">Password</label>
+                        <div className="col-sm-10">
+                        <input
+                            type='password'
+                            id='password'
+                            name='password'
+                            className="form-control"
+                            placeholder='Password'
+                            onChange={formik.handleChange}
+                            value={formik.values.password}
+                        />
+                        {formik.errors.password && formik.touched.password ? (
+                            <p>{formik.errors.password}</p>
+                                ) : null}
+                        </div>
+                    </div>
+                    <div className='form-data'>
+                        <button type='submit'>Submit</button>
+                    </div>
                 </div>
             </form>
             <div className={`error-message ${isError ? 'show' : ''}`}>
                 <p>Invalid username or password</p>
             </div>
         </section>
+        </>
+
     )
 }
 
