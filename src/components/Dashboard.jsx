@@ -5,7 +5,7 @@ import './Dashboard.css';
 const Dashboard = () => {
     const [users, setUsers] = useState([])
     const [tasks, setTasks] = useState([])
-
+    
     useEffect(() => {
         fetch(`${BASE_URL}/users`)
             .then((response) => response.json())

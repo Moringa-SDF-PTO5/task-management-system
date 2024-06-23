@@ -153,7 +153,7 @@ function Signup() {
                     </div>
                     
                 </div>
-                <div className="row mb-3">
+                <div className="form-data">
                         <button type='submit'>Submit</button>
                     </div>
             </form>
