@@ -75,7 +75,7 @@ The app showing  users assigned tasks
 
 
  
-## Author
+## Authors
 The repo has been created and is currently being maintained by:
 
 - Andrew Langat
