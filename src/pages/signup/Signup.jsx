@@ -49,91 +49,113 @@ function Signup() {
     })
 
     return (
-        <section className='signup-container'>
+        <section className='signup-container p-3 m-3'>
             <h2>Sign Up Form</h2>
-            <form onSubmit={formik.handleSubmit}>
-                <div className='form-data'>
-                    <label htmlFor='firstName'>First Name</label>
-                    <input
-                        type='text'
-                        id='firstName'
-                        name='firstName'
-                        onChange={formik.handleChange}
-                        value={formik.values.firstName}
-                    />
-                    {formik.errors.firstName && formik.touched.firstName ? (
-                        <p>{formik.errors.firstName}</p>
-                    ) : null}
+            <form onSubmit={formik.handleSubmit} className='m-3 p-3'>
+                <div className="row">
+                    <div className="row mb-3">
+                        <label htmlFor='firstName' className="col-sm-3 col-form-label">First Name</label>
+                        <div className="col-sm-9">
+                            <input
+                                type='text'
+                                id='firstName'
+                                className="form-control"
+                                name='firstName'
+                                onChange={formik.handleChange}
+                                value={formik.values.firstName}
+                            />
+                            {formik.errors.firstName && formik.touched.firstName ? (
+                                <p>{formik.errors.firstName}</p>
+                                ) : null}
+                        </div>
+                    </div>
+                    <div className="row mb-3">
+                        <label htmlFor='lastName' className="col-sm-3 col-form-label">Last Name</label>
+                        <div className="col-sm-9">
+                            <input
+                                type='text'
+                                id='lastName'
+                                className="form-control"
+                                name='lastName'
+                                onChange={formik.handleChange}
+                                value={formik.values.lastName}
+                                />
+                                {formik.errors.lastName && formik.touched.lastName ? (
+                                    <p>{formik.errors.lastName}</p>
+                                ) : null}
+                    
+                        </div>
+                    </div>
+                    <div className="row mb-3">
+                        <label htmlFor='userName' className="col-sm-3 col-form-label">Username</label>
+                        <div className="col-sm-9">
+                            <input
+                                type='text'
+                                id='userName'
+                                className="form-control"
+                                name='userName'
+                                onChange={formik.handleChange}
+                                value={formik.values.userName}
+                                />
+                                {formik.errors.userName && formik.touched.userName ? (
+                                    <p>{formik.errors.userName}</p>
+                                ) : null}
+                        </div>
+                    </div>
+                    <div className="row mb-3">
+                        <label htmlFor='email' className="col-sm-3 col-form-label">Email</label>
+                        <div className="col-sm-9">
+                            <input
+                                type='text'
+                                id='email'
+                                className="form-control"
+                                name='email'
+                                onChange={formik.handleChange}
+                                value={formik.values.email}
+                            />
+                            {formik.errors.email && formik.touched.email ? (
+                                <p>{formik.errors.email}</p>
+                        ) : null}
+                        </div>
+                    </div>
+                    <div className="row mb-3">
+                        <label htmlFor='phone' className="col-sm-3 col-form-label">Phone Number</label>
+                        <div className="col-sm-9">
+                        <input
+                            type='text'
+                                id='phone'
+                                className="form-control"
+                            name='phone'
+                            onChange={formik.handleChange}
+                            value={formik.values.phone}
+                        />
+                        {formik.errors.phone && formik.touched.phone ? (
+                            <p>{formik.errors.phone}</p>
+                        ) : null}
+                    </div>
+                    </div>
+                    <div className="row mb-3">
+                        <label htmlFor='password' className="col-sm-3 col-form-label">Password</label>
+                        <div className="col-sm-9">
+                        <input
+                            type='password'
+                            placeholder='Password'
+                            id='password'
+                            className="form-control"
+                            name='password'
+                            onChange={formik.handleChange}
+                            value={formik.values.password}
+                        />
+                        {formik.errors.password && formik.touched.password ? (
+                            <p>{formik.errors.password}</p>
+                        ) : null}
+                    </div>
+                    </div>
+                    
                 </div>
-                <div className='form-data'>
-                    <label htmlFor='lastName'>Last Name</label>
-                    <input
-                        type='text'
-                        id='lastName'
-                        name='lastName'
-                        onChange={formik.handleChange}
-                        value={formik.values.lastName}
-                    />
-                    {formik.errors.lastName && formik.touched.lastName ? (
-                        <p>{formik.errors.lastName}</p>
-                    ) : null}
-                </div>
-                <div className='form-data'>
-                    <label htmlFor='userName'>Username</label>
-                    <input
-                        type='text'
-                        id='userName'
-                        name='userName'
-                        onChange={formik.handleChange}
-                        value={formik.values.userName}
-                    />
-                    {formik.errors.userName && formik.touched.userName ? (
-                        <p>{formik.errors.userName}</p>
-                    ) : null}
-                </div>
-                <div className='form-data'>
-                    <label htmlFor='email'>Email</label>
-                    <input
-                        type='text'
-                        id='email'
-                        name='email'
-                        onChange={formik.handleChange}
-                        value={formik.values.email}
-                    />
-                    {formik.errors.email && formik.touched.email ? (
-                        <p>{formik.errors.email}</p>
-                    ) : null}
-                </div>
-                <div className='form-data'>
-                    <label htmlFor='phone'>Phone Number</label>
-                    <input
-                        type='text'
-                        id='phone'
-                        name='phone'
-                        onChange={formik.handleChange}
-                        value={formik.values.phone}
-                    />
-                    {formik.errors.phone && formik.touched.phone ? (
-                        <p>{formik.errors.phone}</p>
-                    ) : null}
-                </div>
-                <div className='form-data'>
-                    <label htmlFor='password'>Password</label>
-                    <input
-                        type='password'
-                        placeholder='Password'
-                        id='password'
-                        name='password'
-                        onChange={formik.handleChange}
-                        value={formik.values.password}
-                    />
-                    {formik.errors.password && formik.touched.password ? (
-                        <p>{formik.errors.password}</p>
-                    ) : null}
-                </div>
-                <div className='form-data'>
-                    <button type='submit'>Submit</button>
-                </div>
+                <div className="form-data">
+                        <button type='submit'>Submit</button>
+                    </div>
             </form>
         </section>
     )
