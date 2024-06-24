@@ -47,15 +47,34 @@ For the project to run the following should be fullfilled:
   
 4. Run  ``` npm install```  to install the requirements.
 
-5. Run ```npm start``` and ```npm run build``` to start the app.
+5. Run ```npm run dev``` to start the app.
 
 ## Backend Repo Link
 
   -- https://github.com/Moringa-SDF-PTO5/task-management-system_backend
 
 ## Demo
+The app showing sign-up form
+
+![sign-up form](https://github.com/Moringa-SDF-PTO5/task-management-system/assets/152980044/eedd73fc-957b-4fd5-9c83-86ed7d13af99)
+
+The app showing log-in form
+![sign-in form](https://github.com/Moringa-SDF-PTO5/task-management-system/assets/152980044/27c26c4a-fba2-4c72-8662-11bcc3514926)
+
+ After successful log-in the app showing task creation form 
+ 
+ ![Task creation form](https://github.com/Moringa-SDF-PTO5/task-management-system/assets/152980044/277ad371-1b9f-42eb-95b1-0f85f731b5d7)
+
+The app showing users dashboard
+
+![users dashboard](https://github.com/Moringa-SDF-PTO5/task-management-system/assets/152980044/1dc96ae9-39c2-4e5d-9329-5f71af053784)
+
+The app showing  users assigned tasks
+
+![image](https://github.com/Moringa-SDF-PTO5/task-management-system/assets/152980044/81d737b3-7603-4c6e-8086-cbce6e56aa05)
 
 
+ 
 ## Author
 The repo has been created and is currently being maintained by:
 
