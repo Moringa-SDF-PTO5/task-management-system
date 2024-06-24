@@ -83,7 +83,7 @@ The repo has been created and is currently being maintained by:
 - Sylivia Chelimo
 
 - Brian Tswal
-- 
+
 - Barbra Tess
 
 - Jackson Njihia
