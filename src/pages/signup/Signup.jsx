@@ -29,8 +29,9 @@ function Signup() {
         },
         validationSchema: formSchema,
         onSubmit: async (values) => {
+            console.log(values)
             try {
-                const response = await fetch(`/api/users`, {
+                const response = await fetch(`https://task-management-system-backend-39v0.onrender.com/api/users`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'
+import { Link } from 'react-router-dom'
 import './Header.css'
 
 function Header({ user, setUser }) {
@@ -11,6 +12,7 @@ function Header({ user, setUser }) {
         navigate('/')
     }
     return (
+        <>
         <header className='header-container'>
             <h3>group-task-manager</h3>
             <div className='header-buttons'>
@@ -38,7 +40,22 @@ function Header({ user, setUser }) {
                     </>
                 )}
             </div>
-        </header>
+            
+            </header>
+            <nav className="navbar navbar-expand-lg bg-body-tertiary mt-3 position-sticky">
+                <div className="container-fluid d-flex justify-content-center text-center">
+                    <Link to='/dashboard' className="navbar-brand">Dashboard</Link>
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <Link className="nav-link" aria-current="page" to="/add-task">Add Task</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link " aria-current="page" to="/assigned-task">Assigned Task</Link>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </>
     )
 }
 

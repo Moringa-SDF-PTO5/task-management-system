@@ -7,6 +7,7 @@ import Login from './pages/login/Login'
 import Dashboard from './components/Dashboard'
 import UserDetails from './components/UserDetails'
 import AddTask from './components/AddTask'
+import AssignedTask from './components/AssignedTasks'
 
 function App() {
     const [user, setUser] = useState(null)
@@ -48,6 +49,10 @@ function App() {
                     <Route
                         path='/add-task'
                         element={<AddTask />}
+                    />
+                    <Route
+                        path='/assigned-task'
+                        element={<AssignedTask />}
                     />
                 </Routes>
             </Router>

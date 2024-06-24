@@ -31,3 +31,10 @@
 .header-buttons button:hover {
     background-color: #6b6b6b;
 }
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

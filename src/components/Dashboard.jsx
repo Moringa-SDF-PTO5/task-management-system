@@ -7,12 +7,12 @@ const Dashboard = () => {
     const [tasks, setTasks] = useState([])
     const BASE_URL = ''
     useEffect(() => {
-        fetch(`https://task-management-system-backend-39v0.onrender.com/api/users`)
+        fetch(`http://127.0.0.1:5000/api/users`)
             .then((response) => response.json())
             .then((data) => setUsers(data.data))
             .catch((error) => console.error('Error fetching users:', error))
 
-        fetch(`https://task-management-system-backend-39v0.onrender.com/tasks`)
+        fetch(`http://127.0.0.1:5000/api/tasks`)
             .then((response) => response.json())
             .then((data) => setTasks(data.data))
             .catch((error) => console.error('Error fetching tasks:', error))

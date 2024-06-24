@@ -4,8 +4,8 @@ import * as Yup from 'yup'
 import { useNavigate } from 'react-router-dom'
 
 // const BASE_URL = import.meta.env.VITE_SERVER_BASE_URL
-// const BASE_URL = 'https://task-management-system-backend-39v0.onrender.com/user'
-const BASE_URL = 'http://127.0.0.1:5000'
+const BASE_URL = 'https://task-management-system-backend-39v0.onrender.com/user'
+// const BASE_URL = 'http://127.0.0.1:5000'
 
 const AddTask = () => {
     const navigate = useNavigate()
